@@ -43,9 +43,9 @@ const Navbar = () => {
     { name: "Home", href: "#home" },
     { name: "Menu", href: "#menu", hasMegaMenu: true },
     { name: "About", href: "#about" },
-    { name: "Reviews", href: "#" },
     { name: "Contact", href: "#contact" },
   ];
+
 
   return (
     <nav
