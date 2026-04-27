@@ -245,7 +245,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-
       {/* Mobile Menu Drawer - Outside Nav */}
       <AnimatePresence>
         {isMobileMenuOpen && (
