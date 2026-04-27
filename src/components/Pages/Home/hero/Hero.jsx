@@ -41,15 +41,20 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <button className="w-full sm:w-auto px-8 py-4 bg-[#3e2723] text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-600 transition-all shadow-xl shadow-rose-100 active:scale-95">
-                Explore Menu
-                <ChevronRight size={20} />
-              </button>
-              <button className="w-full sm:w-auto px-8 py-4 bg-white text-[#3e2723] border-2 border-rose-100 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-50 transition-all active:scale-95">
-                Contact Us
-                <ArrowRight size={20} className="text-rose-400" />
-              </button>
+              <a href="#menu" className="w-full sm:w-auto">
+                <button className="w-full px-8 py-4 bg-[#3e2723] text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-600 transition-all shadow-xl shadow-rose-100 active:scale-95">
+                  Explore Menu
+                  <ChevronRight size={20} />
+                </button>
+              </a>
+              <a href="#contact" className="w-full sm:w-auto">
+                <button className="w-full px-8 py-4 bg-white text-[#3e2723] border-2 border-rose-100 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-50 transition-all active:scale-95">
+                  Contact Us
+                  <ArrowRight size={20} className="text-rose-400" />
+                </button>
+              </a>
             </div>
+
 
             {/* Stats/Trust Badges */}
             <div className="mt-12 flex items-center justify-center lg:justify-start gap-4 md:gap-8 border-t border-rose-50 pt-8 overflow-x-auto">
