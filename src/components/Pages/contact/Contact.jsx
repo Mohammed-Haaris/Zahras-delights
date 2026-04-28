@@ -78,7 +78,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-serif font-bold text-[#3e2723] text-lg mb-1">Email Us</h4>
-                  <p className="text-gray-400 text-sm mb-1 tracking-wider">hello@zahrasdelights.com</p>
+                  <p className="text-gray-400 text-sm mb-1 tracking-wider">shazhiya9686@gmail.com</p>
                   <p className="text-[10px] uppercase font-bold text-rose-400">Response within 24 hours</p>
                 </div>
               </div>

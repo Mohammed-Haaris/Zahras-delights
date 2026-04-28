@@ -3,108 +3,94 @@
 const cakeProducts = [
   {
     id: 1,
-    cakeName: "Double Chocolate Chip",
-    category: "Brownie/Cupcake",
-    price: 15,
-    currency: "$",
-    description:
-      "Rich cocoa cupcakes loaded with premium dark chocolate chips for a double dose of indulgence.",
-    image: "/images/image_9.jpeg",
-  },
-  {
-    id: 2,
-    cakeName: "Fudgy Brown Sugar Brownie",
-    category: "Brownie/Cupcake",
-    price: 12,
-    currency: "$",
-    description:
-      "A deep, caramel-like sweetness from brown sugar combined with a dense, fudgy texture and festive sprinkles.",
-    image: "/images/image_7.jpeg",
-  },
-  {
-    id: 3,
-    cakeName: "Zahra's Fudgy",
-    category: "Brownie/Cupcake",
-    price: 14,
-    currency: "$",
-    description:
-      "Our signature ultra-fudgy brownie, crafted with Zahra's secret blend of chocolates and a melt-in-your-mouth finish.",
-    image: "/images/image_8.jpeg",
-  },
-  {
-    id: 4,
-    cakeName: "Banana Oat Muffin",
+    cakeName: "Chocolate Chip Cookies (12 pcs)",
     category: "Brownie/Cupcake",
     price: 10,
     currency: "$",
     description:
-      "Wholesome and moist muffins packed with ripe bananas and toasted oats for a perfect breakfast or snack.",
-    image: "/images/image_10.jpeg",
+      "Crispy on the edges, chewy in the middle, and loaded with premium chocolate chips.",
+    image: "/images/image_9.jpeg",
+  },
+  {
+    id: 2,
+    cakeName: "Brown Sugar Brownies (25 pcs)",
+    category: "Brownie/Cupcake",
+    price: 18,
+    currency: "$",
+    description:
+      "A deep, caramel-like sweetness from brown sugar combined with a dense, fudgy texture.",
+    image: "/images/image_7.jpeg",
+  },
+  {
+    id: 3,
+    cakeName: "Signature Fudgy Brownies (25 pcs)",
+    category: "Brownie/Cupcake",
+    price: 15,
+    currency: "$",
+    description:
+      "Our signature ultra-fudgy brownie, crafted with a secret blend of chocolates.",
+    image: "/images/image_8.jpeg",
+  },
+  {
+    id: 4,
+    cakeName: "Banana Oat Muffins (12 pcs)",
+    category: "Brownie/Cupcake",
+    price: 15,
+    currency: "$",
+    description:
+      "Wholesome and moist muffins packed with ripe bananas and toasted oats.",
+    image: "/images/image_11.jpeg",
   },
   {
     id: 5,
     cakeName: "Arabian Pudding",
     category: "Desserts",
-    price: 18,
+    price: 12,
     currency: "$",
     description:
-      "A traditional creamy bread pudding infused with cardamom and topped with nuts and raisins (Umm Ali).",
+      "A traditional creamy bread pudding infused with cardamom and topped with nuts (Umm Ali).",
     image: "/images/image_1.jpeg",
   },
   {
     id: 6,
-    cakeName: "Indulge in Rose Milk",
+    cakeName: "Rose Milk",
     category: "Desserts",
-    price: 12,
+    price: 3,
     currency: "$",
     description:
-      "A refreshing and fragrant chilled rose milk topped with basil seeds and rose jelly cubes.",
+      "Refreshing rose milk. $3/cup (more than 5+ cups have discount).",
     image: "/images/image_6.jpeg",
   },
   {
     id: 7,
     cakeName: "Nawabi Treats",
     category: "Desserts",
-    price: 20,
+    price: 12,
     currency: "$",
     description:
-      "Royal individual kunafa pieces with a crispy exterior and a rich, creamy cheese filling.",
+      "Royal individual kunafa pieces with a crispy exterior and a rich, creamy filling.",
     image: "/images/image_4.jpeg",
   },
   {
     id: 8,
-    cakeName: "Royal Kunafa Tub",
+    cakeName: "Royal Kunafa Box (10 pcs)",
     category: "Desserts",
-    price: 15,
+    price: 18,
     currency: "$",
     description:
-      "Convenient individual servings of our classic Kunafa, perfect for on-the-go sweetness.",
+      "Convenient box of our classic Kunafa, perfect for sharing.",
     image: "/images/image_2.jpeg",
   },
   {
     id: 9,
     cakeName: "Grand Celebration Kunafa",
     category: "Desserts",
-    price: 45,
+    price: 20,
     currency: "$",
     description:
       "A large, feast-sized traditional Kunafa pan, golden-brown and soaked in aromatic syrup.",
     image: "/images/image_3.jpeg",
   },
-  {
-    id: 10,
-    cakeName: "Persian Rose Falooda",
-    category: "Desserts",
-    price: 14,
-    currency: "$",
-    description:
-      "Our premium chilled rose dessert bowl, garnished with fresh mint and aromatic rose petals.",
-    image: "/images/image_5.jpeg",
-
-  },
 ];
 
-
 export default cakeProducts;
-
-
