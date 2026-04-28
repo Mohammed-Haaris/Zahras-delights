@@ -67,10 +67,11 @@ const Navbar = () => {
               <div className="w-11 h-11 rounded-full overflow-hidden border border-rose-100 shadow-sm">
                 <img src={logo} alt="Zahra's Delights" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xl font-serif font-bold text-[#3e2723] hidden sm:block tracking-tighter uppercase">
+              <span className="text-2xl hidden sm:block font-bold text-[#3e2723]" style={{ fontFamily: 'var(--font-playwrite)' }}>
                 Zahra's <span className="text-rose-500">Delights</span>
               </span>
             </motion.div>
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-10">
