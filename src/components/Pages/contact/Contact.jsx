@@ -98,11 +98,11 @@ const Contact = () => {
             <div className="pt-8 border-t border-rose-50">
               <h4 className="font-serif font-bold text-[#3e2723] mb-6">Follow our journey</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 bg-[#3e2723] text-white rounded-xl flex items-center justify-center hover:bg-rose-500 transition-all active:scale-90">
+                <a href="https://www.instagram.com/zahras_delights?igsh=aTF1ZnZneWdzN2I2" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-[#3e2723] text-white rounded-xl flex items-center justify-center hover:bg-rose-500 transition-all active:scale-90">
                   <Camera size={20} />
                 </a>
 
-                <a href="#" className="w-12 h-12 bg-[#3e2723] text-white rounded-xl flex items-center justify-center hover:bg-rose-500 transition-all active:scale-90">
+                <a href={`https://wa.me/${ownerNumber.replace("+", "")}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-[#3e2723] text-white rounded-xl flex items-center justify-center hover:bg-rose-500 transition-all active:scale-90">
                   <MessageCircle size={20} />
                 </a>
               </div>

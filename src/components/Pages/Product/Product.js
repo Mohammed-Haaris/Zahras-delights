@@ -58,8 +58,13 @@ const cakeProducts = [
     price: 3,
     currency: "$",
     description:
-      "Refreshing rose milk. $3/cup (more than 5+ cups have discount).",
+      "Refreshing rose milk. $3/cup (Special discount for 5+ cups!)",
     image: "/images/image_6.jpeg",
+    bulkDiscount: {
+      threshold: 5,
+      discountedPrice: 2.5
+    }
+
   },
   {
     id: 7,

@@ -1,12 +1,13 @@
 /** @format */
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Trash2, ShoppingBag, MessageCircle } from "lucide-react";
+import { X, Trash2, ShoppingBag, MessageCircle, Plus, Minus } from "lucide-react";
 import { useCart } from "../../../context/CartContext";
 
 const CartModal = () => {
-  const { cart, removeFromCart, isCartOpen, toggleCart, cartTotal, clearCart } =
+  const { cart, removeFromCart, isCartOpen, toggleCart, cartTotal, clearCart, updateQuantity } =
     useCart();
+
 
   const handleWhatsAppOrder = () => {
     const phoneNumber = "+6581045226"; // Owner's WhatsApp number
@@ -16,8 +17,12 @@ const CartModal = () => {
     message += `Hello! I would like to place an order for:\n\n`;
 
     cart.forEach((item) => {
-      message += `• *${item.cakeName}* (x${item.quantity}) - $${item.price * item.quantity}\n`;
+      const itemPrice = item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold 
+        ? item.bulkDiscount.discountedPrice 
+        : item.price;
+      message += `• *${item.cakeName}* (x${item.quantity}) - $${itemPrice * item.quantity}\n`;
     });
+
 
     message += `\n*Total Amount: $${cartTotal}*\n\n`;
     message += `Please confirm my order. Thank you!`;
@@ -104,12 +109,33 @@ const CartModal = () => {
                           <Trash2 size={18} />
                         </button>
                       </div>
-                      <p className="text-sm text-gray-500 mb-2">
-                        Qty: {item.quantity}
-                      </p>
+                      <div className="flex items-center gap-3 mb-3 mt-1">
+                        <button 
+                          onClick={() => updateQuantity(item.id, -1)}
+                          className="w-7 h-7 bg-rose-50 rounded-full flex items-center justify-center text-rose-500 hover:bg-rose-500 hover:text-white transition-all active:scale-90"
+                        >
+                          <Minus size={14} />
+                        </button>
+                        <span className="text-sm font-bold text-gray-700 min-w-[1.2rem] text-center">
+                          {item.quantity}
+                        </span>
+                        <button 
+                          onClick={() => updateQuantity(item.id, 1)}
+                          className="w-7 h-7 bg-rose-50 rounded-full flex items-center justify-center text-rose-500 hover:bg-rose-500 hover:text-white transition-all active:scale-90"
+                        >
+                          <Plus size={14} />
+                        </button>
+                      </div>
+
                       <p className="font-bold text-rose-600">
-                        ${item.price * item.quantity}
+                        ${(item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold 
+                          ? item.bulkDiscount.discountedPrice 
+                          : item.price) * item.quantity}
+                        {item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold && (
+                          <span className="ml-2 text-[10px] text-green-500 font-bold uppercase">Bulk Deal!</span>
+                        )}
                       </p>
+
                     </div>
                   </div>
                 ))
