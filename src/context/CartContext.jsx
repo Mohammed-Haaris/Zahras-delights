@@ -73,8 +73,27 @@ export const CartProvider = ({ children }) => {
     setCart([]);
   };
 
+  const updateQuantity = (productId, delta) => {
+    setCart((prevCart) => 
+      prevCart.map((item) => {
+        if (item.id === productId) {
+          const newQuantity = Math.max(0, item.quantity + delta);
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      }).filter((item) => item.quantity > 0)
+    );
+  };
+
+
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-  const cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+  const cartTotal = cart.reduce((total, item) => {
+    const price = item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold 
+      ? item.bulkDiscount.discountedPrice 
+      : item.price;
+    return total + (price * item.quantity);
+  }, 0);
+
   const favoritesCount = favorites.length;
 
   return (
@@ -85,6 +104,7 @@ export const CartProvider = ({ children }) => {
       clearCart, 
       cartCount, 
       cartTotal,
+      updateQuantity,
       isCartOpen, 
       toggleCart,
       favorites,
