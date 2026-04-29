@@ -5,8 +5,8 @@ const cakeProducts = [
     id: 1,
     cakeName: "Double Chocolate Chip Muffins (12 pcs)",
     category: "Brownie/Cupcake",
-    actualPrice:12,
-    discountPrice: 10,
+    actualPrice:18,
+    discountPrice: 15,
     currency: "$",
     description:
       "Crispy on the edges, chewy in the middle, and loaded with premium chocolate chips.",
