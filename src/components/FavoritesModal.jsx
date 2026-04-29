@@ -73,7 +73,7 @@ const FavoritesModal = () => {
                           <Trash2 size={16} />
                         </button>
                       </div>
-                      <p className="text-xs text-rose-500 font-bold mb-3">{product.currency}{product.price}</p>
+                      <p className="text-xs text-rose-500 font-bold mb-3">{product.currency}{product.discountPrice || product.price}</p>
                       
                       <button 
                         onClick={() => {

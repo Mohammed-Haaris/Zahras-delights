@@ -88,9 +88,10 @@ export const CartProvider = ({ children }) => {
 
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
   const cartTotal = cart.reduce((total, item) => {
+    const basePrice = item.discountPrice || item.price || 0;
     const price = item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold 
       ? item.bulkDiscount.discountedPrice 
-      : item.price;
+      : basePrice;
     return total + (price * item.quantity);
   }, 0);
 

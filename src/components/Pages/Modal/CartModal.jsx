@@ -17,9 +17,10 @@ const CartModal = () => {
     message += `Hello! I would like to place an order for:\n\n`;
 
     cart.forEach((item) => {
+      const basePrice = item.discountPrice || item.price || 0;
       const itemPrice = item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold 
         ? item.bulkDiscount.discountedPrice 
-        : item.price;
+        : basePrice;
       message += `• *${item.cakeName}* (x${item.quantity}) - $${itemPrice * item.quantity}\n`;
     });
 
@@ -130,7 +131,7 @@ const CartModal = () => {
                       <p className="font-bold text-rose-600">
                         ${(item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold 
                           ? item.bulkDiscount.discountedPrice 
-                          : item.price) * item.quantity}
+                          : (item.discountPrice || item.price || 0)) * item.quantity}
                         {item.bulkDiscount && item.quantity >= item.bulkDiscount.threshold && (
                           <span className="ml-2 text-[10px] text-green-500 font-bold uppercase">Bulk Deal!</span>
                         )}

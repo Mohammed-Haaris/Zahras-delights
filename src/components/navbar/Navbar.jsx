@@ -118,7 +118,7 @@ const Navbar = () => {
                                       </div>
                                       <div>
                                         <p className="text-xs font-bold text-gray-800 tracking-tight">{product.cakeName}</p>
-                                        <p className="text-[10px] text-rose-500 font-bold mt-0.5">{product.currency}{product.price}</p>
+                                        <p className="text-[10px] text-rose-500 font-bold mt-0.5">{product.currency}{product.discountPrice || product.price}</p>
                                       </div>
                                     </div>
                                     <button 
@@ -198,7 +198,7 @@ const Navbar = () => {
                             </div>
                             <div>
                               <p className="text-[11px] font-bold text-gray-800">{product.cakeName}</p>
-                              <p className="text-[9px] text-rose-500 font-bold">{product.currency}{product.price}</p>
+                              <p className="text-[9px] text-rose-500 font-bold">{product.currency}{product.discountPrice || product.price}</p>
                             </div>
                           </div>
                         ))}
@@ -303,7 +303,7 @@ const Navbar = () => {
                           </div>
                           <div>
                             <p className="text-sm font-bold text-gray-800">{product.cakeName}</p>
-                            <p className="text-xs text-rose-500 font-bold">{product.currency}{product.price}</p>
+                            <p className="text-xs text-rose-500 font-bold">{product.currency}{product.discountPrice || product.price}</p>
                           </div>
                         </div>
                       ))
