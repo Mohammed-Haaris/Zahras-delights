@@ -73,9 +73,16 @@ const ProductCard = () => {
                       </h3>
 
 
-                      <span className="text-xl font-bold text-rose-600 whitespace-nowrap">
-                        {cakeProduct.currency}{cakeProduct.price}
-                      </span>
+                      <div className="flex flex-col items-end justify-center mt-1">
+                        {cakeProduct.actualPrice && (
+                          <span className="text-sm font-medium text-gray-400 line-through decoration-rose-300/80 mb-[-4px]">
+                            {cakeProduct.currency}{cakeProduct.actualPrice}
+                          </span>
+                        )}
+                        <span className="text-2xl font-black text-rose-600 tracking-tight whitespace-nowrap drop-shadow-sm">
+                          {cakeProduct.currency}{cakeProduct.discountPrice || cakeProduct.price}
+                        </span>
+                      </div>
                     </div>
 
                     <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
