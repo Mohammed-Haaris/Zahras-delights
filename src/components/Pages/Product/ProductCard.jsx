@@ -4,9 +4,12 @@ import cakeProducts from "./Product";
 import { ShoppingCart, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import { useCart } from "../../../context/CartContext";
+import { useState } from "react";
+import ProductModal from "../Modal/ProductModal";
 
 const ProductCard = () => {
   const { addToCart, toggleFavorite, isFavorite } = useCart();
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   // Group products by category
   const groupedProducts = cakeProducts.reduce((acc, product) => {
@@ -41,7 +44,8 @@ const ProductCard = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="group relative bg-white rounded-[2rem] p-4 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_rgba(244,63,94,0.1)] transition-all duration-500 border border-rose-50/50 flex flex-col"
+                  className="group relative bg-white rounded-[2rem] p-4 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_30px_60px_rgba(244,63,94,0.1)] transition-all duration-500 border border-rose-50/50 flex flex-col cursor-pointer"
+                  onClick={() => setSelectedProduct(cakeProduct)}
                 >
                   {/* Image Section */}
                   <div className="relative h-64 w-full rounded-[1.5rem] overflow-hidden mb-6">
@@ -53,7 +57,7 @@ const ProductCard = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                     
                     <button 
-                      onClick={() => toggleFavorite(cakeProduct)}
+                      onClick={(e) => { e.stopPropagation(); toggleFavorite(cakeProduct); }}
                       className={`absolute top-4 right-4 p-2.5 backdrop-blur-md rounded-full transition-all shadow-sm active:scale-90 z-10 ${
                         isFavorite(cakeProduct.id) 
                         ? "bg-rose-500 text-white shadow-rose-200" 
@@ -90,7 +94,7 @@ const ProductCard = () => {
                     </p>
 
                     <button 
-                      onClick={() => addToCart(cakeProduct)}
+                      onClick={(e) => { e.stopPropagation(); addToCart(cakeProduct); }}
                       className="w-full bg-[#2d2d2d] text-white py-4 rounded-[1.5rem] font-bold flex items-center justify-center gap-3 hover:bg-rose-600 transition-all shadow-lg hover:shadow-rose-200 active:scale-95 group/btn mt-auto"
                     >
                       <ShoppingCart size={18} className="group-hover/btn:animate-bounce" />
@@ -104,6 +108,11 @@ const ProductCard = () => {
           </div>
         ))}
       </div>
+
+      <ProductModal 
+        product={selectedProduct} 
+        onClose={() => setSelectedProduct(null)} 
+      />
     </div>
   );
 };
